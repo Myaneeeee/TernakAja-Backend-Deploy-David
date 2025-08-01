@@ -275,11 +275,11 @@ export const getLivestockStatusCounts = async (
       .select({
         total: sql`COUNT(*)`.as("total"),
         healthy:
-          sql`COUNT(CASE WHEN ${livestockTable.status} = 'healthy' THEN 1 ELSE NULL END)`.as(
+          sql`COUNT(CASE WHEN ${livestockTable.status} = 'Healthy' THEN 1 ELSE NULL END)`.as(
             "healthy"
           ),
         unhealthy:
-          sql`COUNT(CASE WHEN ${livestockTable.status} = 'unhealthy' THEN 1 ELSE NULL END)`.as(
+          sql`COUNT(CASE WHEN ${livestockTable.status} = 'Unhealthy' THEN 1 ELSE NULL END)`.as(
             "unhealthy"
           ),
       })
