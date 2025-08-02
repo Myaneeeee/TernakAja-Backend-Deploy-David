@@ -25,6 +25,7 @@ app.use(
       "http://172.178.82.251",
       AI_ADDR,
       "https://moorgan.vercel.app",
+      "https://ternakaja.my.id",
     ],
     credentials: true,
   })
