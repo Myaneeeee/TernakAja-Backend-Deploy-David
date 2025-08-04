@@ -1,127 +1,248 @@
-<h1 align="center"> TernakAja - Backend </h1> <br>
-<p align="center">
-  <a href="">
-    <img width="1613" height="528" alt="TernakAja" src="https://github.com/user-attachments/assets/6cc18477-97c0-4b9a-8b1a-96a8e2c4f98f" />
-  </a>
-</p>
+[![My Skills](https://skillicons.dev/icons?i=nodejs,express,postgresql,azure,prisma)](https://skillicons.dev)
 
-<p align="center">
-  <b>TernakAja</b> is an <b>intelligent livestock monitoring system</b> to solve SDG Number 2 Zero Hunger (Especially in Agriculture).
-  <b>TernakAja</b> helps farmers monitor the health and behavior of their livestock in real-time using <b>IoT</b> and <b>AI anomaly detection</b>.
- <a href="https://education.elevaite.id/" target="_blank"><b>Microsoft ElevAIte - 2025</b></a><br>
-</p>
+# TernakAja Backend
 
----
+**TernakAja Backend** adalah REST API server berbasis Express.js dan Node.js yang berfungsi sebagai backend service untuk sistem monitoring kesehatan hewan ternak. Server ini mengelola data ternak, integrasi IoT, autentikasi pengguna, dan komunikasi dengan AI service untuk deteksi anomali.
 
-## 📃 Table of Contents
-- [Complete Documentation](#📚-complete-documentation)
-- [All GitHub Repository](#🌐-all-github-repository)
-- [Introduction](#🌟-introduction)
-- [Technology Stack](#🛠️-technology-stack)
-- [Core Features](#🧩-core-features)
-- [Live Demo](#🚀-live-demo)
-- [Getting Started Locally](#🧰-getting-started-locally-backend-version)
-- [Team](#👥-team)
-- [Contact](#📬-contact)
+## Fitur Utama
 
----
+- REST API untuk manajemen data ternak dan kesehatan
+- Autentikasi dan autorisasi berbasis JWT
+- Real-time WebSocket untuk data IoT streaming
+- Integrasi dengan Azure IoT Hub untuk data sensor
+- Role-based access control (Peternak, Dokter Hewan, Admin)
+- AI service integration untuk anomaly detection
+- Database management dengan PostgreSQL
+- File upload dan storage management
+- Email notification service
+- API documentation dengan Swagger/OpenAPI
 
-## 📚 Complete Documentation
+## Struktur Proyek
 
-<ul>
-    <li><b>Notion Documentation (Detail Documentation)</b></li>
-    <a href="https://stanley-n-wijaya.notion.site/Moorgan-Documentation-1df73555b71f80fd9fd9dbfc655ce5a7?pvs=4">Notion Documentation</a>
-    <li><b>Demo Video</b></li>
-    <a href="https://binusianorg-my.sharepoint.com/personal/stanley_wijaya004_binus_ac_id/_layouts/15/guestaccess.aspx?share=EYMWsQ71C9NHv2bWAHrP4L8BMcDJ3e6a9U_hsyYi_i-wlw&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eWRR7c">Link Demo Video</a>
-    <li><b>TernakAja Google Drive</b></li>
-    <a href="https://drive.google.com/drive/folders/1Slexo254LAhwieCQazA-peBe4Vl8fZJ5?usp=sharing">TernakAja Documents + Preliminary Research (Google Drive)</a>
-</ul>
-
----
-
-## 🌐 All GitHub Repository
-
-<ul>
-    <li><b>Main Repository</b></li>
-    <a href="https://github.com/StyNW7/Moorgan">https://github.com/StyNW7/Moorgan</a>
-    <li><b>Frontend Repository</b></li>
-    <a href="https://github.com/StyNW7/Moorgan-Frontend">https://github.com/StyNW7/Moorgan-Frontend</a>
-    <li><b>Backend Repository</b></li>
-    <a href="https://github.com/StyNW7/Moorgan-Backend">https://github.com/StyNW7/Moorgan-Backend</a>
-    <li><b>AI Repository</b></li>
-    <a href="https://github.com/StyNW7/Moorgan-AI">https://github.com/StyNW7/Moorgan-AI</a>
-    <li><b>IoT Repository</b></li>
-    <a href="https://github.com/StyNW7/Moorgan-IoT">https://github.com/StyNW7/Moorgan-IoT</a>
-</ul>
-
----
-
-## 🌟 Introduction
-**TernakAja** revolutionizes livestock farming through intelligent, real-time health and behavior monitoring. Combining IoT sensors and AI anomaly detection, TernakAja empowers farmers to detect health issues early, prevent loss, and optimize livestock productivity.
-> "Every heartbeat, every step, every breath of your livestock matters. TernakAja listens and protects."   
-> — *TernakAja Manifesto*
-
----
-
-## 🛠️ Technology Stack
-- **Frontend**: Vite, TypeScript, TailwindCSS, and ShadcnUI
-- **Backend**: Express.js & Node.js
-- **Database**: Azure PostgreSQL Flexible Server
-- **AI Integration**: Python  & Hugging Face API
-- **IoT Device**: Arduino C++ (ESP32 + Sensors)
-- **Version Control**: Git & GitHub (Submodule Monorepo)
-- **Deployment**:
-  - Frontend: [Vercel](https://vercel.com)
-  - Backend, AI, Database: Coming Soon!
-
----
-
-## 🧩 Core Features
-
-- 🔥 **Real-Time Livestock Monitoring**  
-  Monitor temperature, heart rate, and motion of each livestock in real-time via IoT integration.
-
-- 🧠 **AI Anomaly Detection**  
-  Smart detection of anomalies such as fever, stress, reduced activity, and fertility prediction.
-
-- 🐄 **Livestock Management System**  
-  Manage livestock profiles, health history, vaccination records, and behavior patterns.
-
-- 📈 **Data Analytics and Trends**  
-  Visualize livestock health trends and detect early warning signs before problems escalate.
-
-- 🚨 **Instant Alert System**  
-  Receive instant notifications for any detected anomalies on your mobile or desktop.
-
-- 🛒 **Marketplace & Community Forum**  
-  Sell livestock and discuss farming tips with the community.
-
-- 📚 **Knowledge Center**  
-  Educational articles about livestock health, farming techniques, and veterinary advice.
-
-- 🔒 **Role-Based Access Control**  
-  Different dashboards and access for peternak, dokter hewan, and admin.
-
----
-
-## 🚀 Live Demo
-Visit the deployed application here (frontend only):
-<br>
-👉 [https://moorgan.vercel.app/](https://moorgan.vercel.app/)
-
----
-
-## 🧰 Getting Started Locally (Backend Version)
-
-### Prerequisites
-- **Node.js** (v18 or above)
-- **Git**
-
-### Run Local for TernakAja Backend
-```bash
-git clone https://github.com/StyNW7/Moorgan-Backend.git
-cd moorgan-backend
-npm install
-npm run dev
-npm run db:studio
 ```
+src/
+├── controllers/          // Controller untuk handle request
+│   ├── auth.js          // Authentication endpoints
+│   ├── livestock.js     // Livestock management
+│   ├── health.js        // Health data management
+│   └── user.js          // User management
+├── middleware/          // Custom middleware
+│   ├── auth.js          // JWT authentication
+│   ├── validation.js    // Request validation
+│   └── errorHandler.js  // Error handling
+├── models/              // Database models (Prisma)
+│   ├── User.js          // User model
+│   ├── Livestock.js     // Livestock model
+│   └── HealthData.js    // Health data model
+├── routes/              // API route definitions
+│   ├── auth.js          // Auth routes
+│   ├── livestock.js     // Livestock routes
+│   └── health.js        // Health data routes
+├── services/            // Business logic services
+│   ├── iotService.js    // IoT data processing
+│   ├── aiService.js     // AI integration
+│   └── emailService.js  // Email notifications
+├── utils/               // Utility functions
+│   ├── database.js      // Database connection
+│   ├── validators.js    // Data validation
+│   └── helpers.js       // Helper functions
+└── config/              // Configuration files
+    ├── database.js      // DB configuration
+    └── azure.js         // Azure services config
+```
+
+## Setup & Konfigurasi
+
+### 1. Clone Repositori
+```bash
+git clone https://github.com/TernakAja/TernakAja-Backend.git
+cd TernakAja-Backend
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+# atau
+yarn install
+```
+
+### 3. Konfigurasi Environment
+Buat file `.env` dan isi dengan konfigurasi yang diperlukan:
+```env
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/ternakaja"
+AZURE_POSTGRESQL_URL="your-azure-postgresql-connection-string"
+
+# JWT
+JWT_SECRET="your-jwt-secret-key"
+JWT_EXPIRES_IN="7d"
+
+# Azure Services
+AZURE_IOT_CONNECTION_STRING="your-azure-iot-hub-connection"
+AZURE_STORAGE_CONNECTION_STRING="your-azure-storage-connection"
+
+# AI Service
+AI_SERVICE_URL="http://localhost:5000"
+HUGGINGFACE_API_KEY="your-huggingface-api-key"
+
+# Email Service
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT=587
+SMTP_USER="your-email@gmail.com"
+SMTP_PASS="your-app-password"
+
+# Server Configuration
+PORT=3000
+NODE_ENV="development"
+```
+
+### 4. Setup Database
+```bash
+# Generate Prisma client
+npx prisma generate
+
+# Run database migrations
+npx prisma migrate dev
+
+# Seed database (optional)
+npm run db:seed
+```
+
+### 5. Jalankan Development Server
+```bash
+npm run dev
+# atau
+yarn dev
+```
+
+## Scripts yang Tersedia
+
+```bash
+npm run dev          # Jalankan development server dengan nodemon
+npm run start        # Jalankan production server
+npm run build        # Build aplikasi untuk production
+npm run test         # Jalankan unit tests
+npm run db:studio    # Buka Prisma Studio untuk database management
+npm run db:migrate   # Jalankan database migrations
+npm run db:seed      # Seed database dengan data awal
+npm run lint         # Jalankan ESLint
+```
+
+## Teknologi yang Digunakan
+
+### Core Technologies
+- **Node.js** - JavaScript runtime environment
+- **Express.js** - Web framework untuk Node.js
+- **TypeScript** - Type safety dan better DX
+- **Prisma** - ORM dan database toolkit
+
+### Database & Storage
+- **PostgreSQL** - Primary database
+- **Azure PostgreSQL** - Cloud database service
+- **Azure Blob Storage** - File storage service
+- **Redis** - Caching dan session storage
+
+### Authentication & Security
+- **JWT (JSON Web Tokens)** - Authentication
+- **bcrypt** - Password hashing
+- **Helmet** - Security headers
+- **CORS** - Cross-origin resource sharing
+
+### External Integrations
+- **Azure IoT Hub** - IoT device management
+- **Nodemailer** - Email service
+- **Socket.io** - Real-time communication
+- **Axios** - HTTP client untuk AI service calls
+
+## API Endpoints
+
+### Authentication
+```
+POST /api/auth/register     # User registration
+POST /api/auth/login        # User login
+POST /api/auth/logout       # User logout
+GET  /api/auth/profile      # Get user profile
+PUT  /api/auth/profile      # Update user profile
+```
+
+### Livestock Management
+```
+GET    /api/livestock           # Get all livestock
+GET    /api/livestock/:id       # Get livestock by ID
+POST   /api/livestock           # Create new livestock
+PUT    /api/livestock/:id       # Update livestock
+DELETE /api/livestock/:id       # Delete livestock
+GET    /api/livestock/:id/health # Get health history
+```
+
+### Health Data
+```
+GET  /api/health               # Get health data
+POST /api/health               # Create health record
+GET  /api/health/analytics     # Get health analytics
+GET  /api/health/alerts        # Get health alerts
+POST /api/health/iot-data      # Receive IoT sensor data
+```
+
+### User Management (Admin only)
+```
+GET    /api/users              # Get all users
+GET    /api/users/:id          # Get user by ID
+PUT    /api/users/:id/role     # Update user role
+DELETE /api/users/:id          # Delete user
+```
+
+## Database Schema
+
+### Core Models
+- **User** - Peternak, Dokter Hewan, Admin
+- **Livestock** - Data profil hewan ternak
+- **HealthData** - Data kesehatan dari sensor IoT
+- **Alert** - Notifikasi anomali kesehatan
+- **VaccinationRecord** - Riwayat vaksinasi
+- **FeedingSchedule** - Jadwal pemberian pakan
+
+### Relationships
+- User memiliki banyak Livestock
+- Livestock memiliki banyak HealthData
+- HealthData dapat generate Alert
+- Livestock memiliki VaccinationRecord dan FeedingSchedule
+
+## Integrasi dengan Services Lain
+
+Backend ini terintegrasi dengan:
+- **[TernakAja Frontend](https://github.com/TernakAja/TernakAja-Frontend)** - React dashboard
+- **[TernakAja AI](https://github.com/StyNW7/TernakAja-AI)** - ML models untuk anomaly detection  
+- **[TernakAja IoT](https://github.com/StyNW7/TernakAja-IoT)** - ESP32 sensor devices
+- **Azure IoT Hub** - IoT device management dan data ingestion
+- **Azure PostgreSQL** - Cloud database service
+
+## WebSocket Events
+
+### Real-time Data Streaming
+```javascript
+// Client connection
+socket.on('connect', () => {
+  socket.emit('join-livestock', { livestockId });
+});
+
+// Server events
+socket.emit('health-data-update', healthData);
+socket.emit('anomaly-detected', alertData);
+socket.emit('device-status-change', statusData);
+```
+
+## Rencana Pengembangan
+
+- Implementasi GraphQL untuk flexible data querying
+- Microservices architecture dengan Docker containers
+- Advanced caching strategy dengan Redis
+- Message queue implementation dengan Azure Service Bus
+- API rate limiting dan throttling
+- Advanced logging dan monitoring dengan Azure Application Insights
+- Automated testing dengan Jest dan Supertest
+- CI/CD pipeline dengan GitHub Actions
+
+## Live API Documentation
+
+API documentation tersedia di: `http://localhost:3000/api-docs` (saat development)
