@@ -5,7 +5,7 @@ import {
   notificationsTable,
   sensorDataTable,
 } from "../db/schema";
-import { eq, sql } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 
 export const getRecentNotifications = async (
   req: Request,
@@ -57,6 +57,7 @@ export const getNotificationsWithLivestockAndSensorData = async (
   try {
     const userId = Number(req.params.userId);
 
+    // Fetch notifications with associated livestock and the latest sensor data
     const result = await db
       .select({
         notification: {
@@ -87,10 +88,11 @@ export const getNotificationsWithLivestockAndSensorData = async (
           updatedAt: livestockTable.updatedAt,
         },
         sensor_data: {
+          id: sensorDataTable.id,
           livestockId: sensorDataTable.livestockId,
           temperature: sensorDataTable.temperature,
           heartRate: sensorDataTable.heartRate,
-          sp02: sensorDataTable.sp02, // CHANGED
+          sp02: sensorDataTable.sp02,
           timestamp: sensorDataTable.timestamp,
         },
       })
@@ -99,11 +101,16 @@ export const getNotificationsWithLivestockAndSensorData = async (
         livestockTable,
         eq(notificationsTable.livestockId, livestockTable.id)
       )
-      .innerJoin(
+      .leftJoin(
         sensorDataTable,
-        eq(sensorDataTable.livestockId, livestockTable.id)
+        eq(
+          sensorDataTable.id,
+          // Subquery to get the latest sensor_data record for each livestockId
+          sql`(SELECT id FROM ${sensorDataTable} WHERE ${sensorDataTable.livestockId} = ${livestockTable.id} ORDER BY ${sensorDataTable.timestamp} DESC LIMIT 1)`
+        )
       )
-      .where(eq(notificationsTable.userId, userId));
+      .where(eq(notificationsTable.userId, userId))
+      .orderBy(desc(notificationsTable.sentAt));
 
     if (!result.length) {
       res.status(404).json({
